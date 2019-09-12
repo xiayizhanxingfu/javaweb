@@ -27,8 +27,9 @@
 使用指定的名称和值来产生一个对象并绑定到session中
 >* public void setMaxInactiveInterval(int interval)  
 用来指定时间，以秒为单位，servlet容器将会在这段时间内保持会话有效
-## Session应用
-新建SessionDemo类  
+## Session应用  
+新建SessionDemo类   
+
 ```  
 @WebServlet("/SessionDemo")
 public class SessionDemo extends HttpServlet {
