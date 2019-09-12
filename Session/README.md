@@ -29,7 +29,7 @@
 用来指定时间，以秒为单位，servlet容器将会在这段时间内保持会话有效
 ## Session应用
 新建SessionDemo类  
-```
+```  
 @WebServlet("/SessionDemo")
 public class SessionDemo extends HttpServlet {
 	private int count=0;
@@ -40,19 +40,19 @@ public class SessionDemo extends HttpServlet {
 		count++;
 		HttpSession session = request.getSession();
 		String id = session.getId();
-		long startTime = session.getCreationTime();// 会话创建时间
-		long lastTime = session.getLastAccessedTime();// 获取最后访问时间
-		long validTime = session.getMaxInactiveInterval();// 获取会话有效时间
-		session.setMaxInactiveInterval(60);//设置会话有效时间
-		SimpleDateFormat myFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//时间格式转换
+		long startTime = session.getCreationTime();
+		long lastTime = session.getLastAccessedTime();
+		long validTime = session.getMaxInactiveInterval();
+		session.setMaxInactiveInterval(60);
+		SimpleDateFormat myFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<!DOCTYPE HTML PUBLIC \"-
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
-		if(session.isNew()) {//判断是否新客户
+		if(session.isNew()) {
 			out.println("新客户<br>");
 		}else {
 			out.println("不是新客户<br>");
@@ -69,4 +69,5 @@ public class SessionDemo extends HttpServlet {
 		out.close();
 	}
 }
+
 ```  
