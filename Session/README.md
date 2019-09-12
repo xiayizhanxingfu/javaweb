@@ -30,7 +30,7 @@
 ## Session应用
 新建SessionDemo类  
 ```
-@WebServlet("/SessionDemo")//servlet的URL匹配模式
+@WebServlet("/SessionDemo")
 public class SessionDemo extends HttpServlet {
 	private int count=0;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +38,7 @@ public class SessionDemo extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		count++;
-		HttpSession session = request.getSession();// 获取会话
+		HttpSession session = request.getSession();
 		String id = session.getId();
 		long startTime = session.getCreationTime();// 会话创建时间
 		long lastTime = session.getLastAccessedTime();// 获取最后访问时间
