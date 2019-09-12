@@ -27,3 +27,48 @@
 使用指定的名称和值来产生一个对象并绑定到session中
 >* public void setMaxInactiveInterval(int interval)  
 用来指定时间，以秒为单位，servlet容器将会在这段时间内保持会话有效
+## Session应用
+>新建javaweb项目SessionTest,再新建SessionDemo类
+>
+```  
+@WebServlet("/SessionDemo")//servlet的URL匹配模式
+public class SessionDemo extends HttpServlet {
+	private int count=0;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		count++;
+		HttpSession session = request.getSession();// 获取会话
+		String id = session.getId();
+		long startTime = session.getCreationTime();// 会话创建时间
+		long lastTime = session.getLastAccessedTime();// 获取最后访问时间
+		long validTime = session.getMaxInactiveInterval();// 获取会话有效时间
+		session.setMaxInactiveInterval(60);//设置会话有效时间
+		SimpleDateFormat myFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//时间格式转换
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		if(session.isNew()) {//判断是否新客户
+			out.println("新客户<br>");
+		}else {
+			out.println("不是新客户<br>");
+		}
+		out.println("会话ID:" + id+"<br>");
+		out.println("会话创建时间:"+myFormat.format(startTime)+"<br>");
+		out.println("会话有效时间:"+validTime+"秒<br>");
+		out.println("当前会话有效时间:"+session.getMaxInactiveInterval()+"秒<br>");
+		out.println("最后访问时间:"+myFormat.format(lastTime)+"<br>");
+		out.println("访问次数:"+count+"<br>");
+		out.println("  </BODY>");
+		out.println("</HTML>");
+		out.flush();
+		out.close();
+	}
+}
+```  
+>
