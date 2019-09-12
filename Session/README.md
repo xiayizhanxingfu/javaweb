@@ -71,5 +71,26 @@ public class SessionDemo extends HttpServlet {
 }
 
 ```   
-
+## 会话监听器  
+### HttpSessionListener  
+```
+@WebListener
+public class SerssionListenerDemo implements HttpSessionListener{
+	private static int count=0;
+	@Override
+	public void sessionCreated(HttpSessionEvent se) {
+		HttpSessionListener.super.sessionCreated(se);
+		count++;
+		System.out.println("第"+count+"个会话被创建");
+	}
+	@Override
+	public void sessionDestroyed(HttpSessionEvent se) {
+		// TODO Auto-generated method stub
+		HttpSessionListener.super.sessionDestroyed(se);
+		System.out.println("会话被毁灭");
+		count--;
+		System.out.println("当前剩余"+count+"个会话");
+	}
+}
+```
 
