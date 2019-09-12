@@ -29,7 +29,7 @@
 用来指定时间，以秒为单位，servlet容器将会在这段时间内保持会话有效
 ## Session应用
 新建SessionDemo类  
-```  
+```
 @WebServlet("/SessionDemo")//servlet的URL匹配模式
 public class SessionDemo extends HttpServlet {
 	private int count=0;
