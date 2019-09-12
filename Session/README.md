@@ -72,7 +72,7 @@ public class SessionDemo extends HttpServlet {
 
 ```   
 ## 会话监听器  
-### 新建SerssionListenerDemo类实现HttpSessionListener接口,重写sessionCreated,sessionDestroyed  
+### 新建SerssionListenerDemo类
 ```
 @WebListener
 public class SerssionListenerDemo implements HttpSessionListener{
@@ -93,4 +93,41 @@ public class SerssionListenerDemo implements HttpSessionListener{
 	}
 }
 ```
+### 新建SessionAttributeListener类  
+```
+@WebListener
+public class SessionAttributeListener implements HttpSessionAttributeListener{
+	@Override
+	public void attributeAdded(HttpSessionBindingEvent event) {
+		HttpSessionAttributeListener.super.attributeAdded(event);
+		System.out.println("session添加了一个属性");
+	}
+	@Override
+	public void attributeRemoved(HttpSessionBindingEvent event) {
+		HttpSessionAttributeListener.super.attributeRemoved(event);
+		System.out.println("session删除了某个属性");
+	}
+	@Override
+	public void attributeReplaced(HttpSessionBindingEvent event) {
+		HttpSessionAttributeListener.super.attributeReplaced(event);
+		System.out.println("session修改了某个属性");
+	}
+}
 
+```
+### 新建ServletRequestListener类
+```
+@WebListener
+public class ServletRequestListener implements javax.servlet.ServletRequestListener{
+	@Override
+	public void requestInitialized(ServletRequestEvent sre) {
+		javax.servlet.ServletRequestListener.super.requestInitialized(sre);
+		System.out.println("生成新的请求");
+	}
+	@Override
+	public void requestDestroyed(ServletRequestEvent sre) {
+		javax.servlet.ServletRequestListener.super.requestDestroyed(sre);
+		System.out.println("请求毁灭");
+	}
+}
+```
