@@ -45,6 +45,8 @@ public class SessionDemo extends HttpServlet {
 		long validTime = session.getMaxInactiveInterval();
 		session.setMaxInactiveInterval(60);
 		SimpleDateFormat myFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+```
+```
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-
