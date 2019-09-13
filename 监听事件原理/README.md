@@ -56,4 +56,8 @@ public class Test {
 ```
 
 ### 结果
-![]()
+![](img/1.png)
+
+## 监听事件使用
+>在javaweb中,不论与ServletContext,HttpSession,ServletRequest相关的监听接口
+>我们只需要直接实现这些监听接口事件,其他的源码别人己经写好了,我们不用关心它是如何实现
