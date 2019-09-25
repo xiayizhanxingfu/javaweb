@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>web</display-name>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.kai.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BookServlet</servlet-name>
+    <servlet-class>com.kai.servlet.BookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>com.kai.servlet.DeleteBookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateBookServlet</servlet-name>
+    <servlet-class>com.kai.servlet.UpdateBookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddBookServlet</servlet-name>
+    <servlet-class>com.kai.servlet.AddBookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ClassifyBookServlet</servlet-name>
+    <servlet-class>com.kai.servlet.ClassifyBookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteClassify</servlet-name>
+    <servlet-class>com.kai.servlet.DeleteClassify</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateclassifyServlet</servlet-name>
+    <servlet-class>com.kai.servlet.UpdateclassifyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddClassifyServlet</servlet-name>
+    <servlet-class>com.kai.servlet.AddClassifyServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BookServlet</servlet-name>
+    <url-pattern>/bookServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/deleteBook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateBookServlet</servlet-name>
+    <url-pattern>/updatebook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddBookServlet</servlet-name>
+    <url-pattern>/addbook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ClassifyBookServlet</servlet-name>
+    <url-pattern>/classifybook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteClassify</servlet-name>
+    <url-pattern>/deleteclassify</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateclassifyServlet</servlet-name>
+    <url-pattern>/updateclassify</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddClassifyServlet</servlet-name>
+    <url-pattern>/addclassify</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
