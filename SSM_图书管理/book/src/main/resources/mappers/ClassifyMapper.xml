@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ClassifyDao">
+    <resultMap id="classifyMap" type="com.bean.Classify">
+        <id property="classifyId" column="classify_id"/>
+        <result property="classifyName" column="classify_name"/>
+    </resultMap>
+    <select id="selecttAll" resultMap="classifyMap">
+        select *
+        from classify
+    </select>
+    <delete id="deleteById" parameterType="int">
+        delete
+        from classify
+        where classify_id = #{id}
+    </delete>
+    <insert id="add" parameterType="com.bean.Classify" useGeneratedKeys="true" keyColumn="classify_id">
+        insert into classify(classify_name)
+        values (#{classifyName})
+    </insert>
+    <update id="updateById" parameterType="com.bean.Classify">
+        update classify
+        set classify_name = #{classifyName}
+        where classify_id = #{classifyId}
+    </update>
+</mapper>
