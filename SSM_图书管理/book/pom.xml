@@ -11,7 +11,7 @@
     <artifactId>SSM-TEST</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <spring.version>5.2.0.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <commons-logging.version>1.2</commons-logging.version>
         <junit.version>4.12</junit.version>
     </properties>
